@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    height: 80px;
+    /* background: rgb(228, 255, 221); */
+    background: #81b29a;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.NavLink {
+    /* font-size: 5rem; */
+    text-decoration: none;
+    padding: 2px 5px;
+    margin: 5px;
+    /* border: 1px solid rgb(22, 42, 221);
+    color: rgb(22, 42, 221); */
+    border: 1px solid #f2cc8f;
+    color: #f2cc8f;
+    border-radius: 5px;
+}
+.title {
+    color: #3d405b;
+}

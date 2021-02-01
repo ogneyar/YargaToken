@@ -1,0 +1,11 @@
+.home h1 {
+    background: rgb(207, 207, 207);
+    padding: 10px;
+    border-radius: 5px;
+}
+.home h2 {
+    padding: 10px;
+}
+.home p {
+    color: #e07a5f;
+}

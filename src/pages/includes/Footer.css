@@ -1,0 +1,11 @@
+.footer {
+    /* background: rgb(228, 255, 221); */
+    background: #81b29a;
+    width: 100%;
+    height: 200px;
+}
+.footer h3 {
+    text-align: left;
+    padding: 10px;
+    color: #3d405b;
+}
