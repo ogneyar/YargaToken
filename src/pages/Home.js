@@ -11,12 +11,7 @@ export const Home = () => {
             {/* <h1>Ярга Токен</h1> */}
             <br />
             <p>Сайт в разработке!</p>
-
-            <audio autoplay>
-                <source src="/audio/svarga.ogg" type='audio/ogg; codecs=vorbis' />
-                <source src="/audio/svarga.mp3" type="audio/mpeg" />
-                Тег audio не поддерживается вашим браузером. <a href="/audio/svarga.mp3">Скачайте музыку</a>.
-            </audio>
+            
         </div>
     );
 }

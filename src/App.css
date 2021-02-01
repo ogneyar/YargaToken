@@ -5,14 +5,6 @@
 }
 body {
   width: 100%;
-  /* min-height: 100vh; */
-
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
-
-  /* background: rgb(228, 228, 228); */
   background: #f4f1de;
   text-align: center;
   color: #3d405b;
@@ -26,14 +18,4 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-
-h1 {
-  /* background: rgb(207, 207, 207);
-  padding: 10px;
-  border-radius: 5px; */
-}
-h2 {
-  /* padding: 10px; */
 }
