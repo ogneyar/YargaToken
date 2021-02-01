@@ -14,8 +14,8 @@ body {
   min-height: calc(100vh - 300px);
   padding-top: 100px;
   margin: 0 auto;
-  /* display: flex; */
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
