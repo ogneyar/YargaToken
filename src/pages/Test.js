@@ -1,8 +1,12 @@
 import React from 'react';
 
-let ball = document.getElementById("ball")
+// let ball = document.getElementById("ball")
 
-ball.onmousedown = function(event) {
+function ballOnmousedown(event) {
+    let ball = event.target
+
+    // console.log(event.target);
+    // console.log(event.type);
 
     let shiftX = event.clientX - ball.getBoundingClientRect().left;
     let shiftY = event.clientY - ball.getBoundingClientRect().top;
@@ -18,6 +22,8 @@ ball.onmousedown = function(event) {
     function moveAt(pageX, pageY) {
       ball.style.left = pageX - shiftX + 'px';
       ball.style.top = pageY - shiftY + 'px';
+    //   ball.style.left = pageX + 'px';
+    //   ball.style.top = pageY + 'px';
     }
   
     function onMouseMove(event) {
@@ -28,22 +34,33 @@ ball.onmousedown = function(event) {
     document.addEventListener('mousemove', onMouseMove);
   
     // отпустить мяч, удалить ненужные обработчики
-    ball.onmouseup = function() {
+    ball.onmouseup = function(e) {
       document.removeEventListener('mousemove', onMouseMove);
       ball.onmouseup = null;
     };
   
-  };
+};
   
-  ball.ondragstart = function() {
+function ballOndragstart(e) {
+    console.log(e.type);
     return false;
-  };
+};
+
+// ball.addEventListener("onmousedown", ballOnmousedown)
+// ball.addEventListener("ondragstart", ballOndragstart)
+
+function event(e) {
+    // e.preventDefault();
+    console.log(e.type);
+}
+    
 
 export const Test = () => {
     return (
         <div>
 
-            <img src="/image/test.jpg" alt="test" id="ball"/>
+            <img src="/image/test.jpg" alt="test" id="ball" onMouseDown={ballOnmousedown} onDragStart={ballOndragstart} onMouseUp={event} />
+            {/* <img src="/image/test.jpg" alt="test" id="ball" /> */}
             
         </div>
     );

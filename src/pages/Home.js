@@ -1,20 +1,16 @@
 import React from 'react';
 import './Home.css';
 
-// function handleClick(e) {
+
+// function event(e) {
 //     e.preventDefault();
-//     console.log('Клик.');
-//   }
-
-function event(e) {
-    // e.preventDefault();
-    console.log(e.type);
-}
+//     console.log(e.type);
+// }
 
 
-document.addEventListener("scroll", event)
-document.addEventListener("drag", event)
-document.addEventListener("drop", event)
+// document.addEventListener("scroll", event)
+// document.addEventListener("drag", event)
+// document.addEventListener("drop", event)
 
 export const Home = () => {
     return (
