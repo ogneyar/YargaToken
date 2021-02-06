@@ -61,24 +61,73 @@ function dragStart(event) {
   event.dataTransfer.setData("Text", event.target.id);
 }
 
+
 function allowDrop(event) {
   event.preventDefault();
+
+  
+  let dropTable = document.getElementById("dropTable");
+  if (typeof(window.FileReader) == 'undefined') {
+    // dropTable.text('Не поддерживается браузером!');
+    // dropTable.addClass('error');
+    dropTable.style.background = "#faa";
+    return false;
+  }
+
   document.getElementById("demo").innerHTML = "И отпусти...";
   event.target.style.border = "4px dotted green";
 }
 
 function leave(event) {
   event.preventDefault();
+
+  let dropTable = document.getElementById("dropTable");  
+  dropTable.style.background = "white";
+
   document.getElementById("demo").innerHTML = "";
   event.target.style.border = "1px solid #aaaaaa";
 }
 
+
+function uploadProgress(event) {
+  let percent = parseInt(event.loaded / event.total * 100);
+  let demo = document.getElementById("demo");  
+  demo.innerHTML = 'Загрузка: ' + percent + '%';
+}
+
+
+function stateChange(event) {
+  let demo = document.getElementById("demo");  
+  if (event.target.readyState === 4) {
+      if (event.target.status === 200) {
+        demo.innerHTML = 'Загрузка успешно завершена!';
+      } else {
+        demo.innerHTML = 'Произошла ошибка!';
+        demo.color = "red";
+      }
+  }
+}
+
+
 function drop(event) {
   event.preventDefault();
-  var data = event.dataTransfer.getData("Text");
-  event.target.appendChild(document.getElementById(data));
-  document.getElementById("demo").innerHTML = "Текст был перемещён.";
+
+  let file = event.dataTransfer.files[0];
+
+  if (file) {
+    let xhr = new XMLHttpRequest();
+    xhr.upload.addEventListener('progress', uploadProgress, false);
+    xhr.onreadystatechange = stateChange;
+    xhr.open('GET', '/about');
+    // xhr.setRequestHeader('X-FILE-NAME', file.name);
+    xhr.send(file);
+  }else {
+    let data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "Текст был перемещён.";
+  }
 }
+
 
 export const Test = () => {
     return (
@@ -92,7 +141,7 @@ export const Test = () => {
 
         <p id="demo"></p>
       
-        <div className="test" id="dropTable" onContextMenu={event}  onDrop={drop} onDragOver={allowDrop} onDragLeave={leave}>
+        <div className="test" id="dropTable" onContextMenu={event} onDrop={drop} onDragOver={allowDrop} onDragLeave={leave}>
 
           <img src="/image/test.jpg" alt="test" id="ball" onMouseDown={ballOnmousedown}/>
 

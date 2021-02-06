@@ -24,3 +24,19 @@
     padding: 10px;
     border: 1px solid #aaaaaa;
 }
+
+
+.hover {
+    background: #ddd;
+    border-color: #aaa;
+}
+
+.error {
+    background: #faa;
+    border-color: #f00;
+}
+
+.drop {
+    background: #afa;
+    border-color: #0f0;
+}
