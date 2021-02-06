@@ -134,7 +134,9 @@ export const Test = () => {
         // <div className="test" id="dropTable" onClick={event} onContextMenu={event} onDoubleClick={event} onDrag={event} onDragEnd={event} onDragEnter={event} onDragExit={event} onDragLeave={event} onDragOver={event} onDragStart={event} onDrop={event} onMouseDown={event} onMouseEnter={event} onMouseLeave={event} onMouseMove={event} onMouseOut={event} onMouseOver={event} onMouseUp={event} >
 
       <div className="div">
-        <p onDragStart={dragStart} draggable="true" id="dragtarget">Потяни этот текст в белый квадрат!</p>
+        <h2>Тест перетаскивания объектов.</h2>
+        <h4>Перетащи любой файл в квадрат, или...</h4>
+        <p onDragStart={dragStart} draggable="true" id="dragtarget">--&gt; перетяни этот текст &lt;--</p>
 
         {/* <div id="droptarget" onDrop={drop} onDragOver={allowDrop} onDragLeave={leave}></div> */}
 
