@@ -57,14 +57,46 @@ function event(e) {
 }
     
 
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+  document.getElementById("demo").innerHTML = "И отпусти...";
+  event.target.style.border = "4px dotted green";
+}
+
+function leave(event) {
+  event.preventDefault();
+  document.getElementById("demo").innerHTML = "";
+  event.target.style.border = "1px solid #aaaaaa";
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+  document.getElementById("demo").innerHTML = "Текст был перемещён.";
+}
+
 export const Test = () => {
     return (
         // <div className="test" id="dropTable" onClick={event} onContextMenu={event} onDoubleClick={event} onDrag={event} onDragEnd={event} onDragEnter={event} onDragExit={event} onDragLeave={event} onDragOver={event} onDragStart={event} onDrop={event} onMouseDown={event} onMouseEnter={event} onMouseLeave={event} onMouseMove={event} onMouseOut={event} onMouseOver={event} onMouseUp={event} >
 
-        <div className="test" id="dropTable" onContextMenu={event} >
+      <div className="div">
+        <p onDragStart={dragStart} draggable="true" id="dragtarget">Потяни этот текст в белый квадрат!</p>
+
+        {/* <div id="droptarget" onDrop={drop} onDragOver={allowDrop} onDragLeave={leave}></div> */}
+
+
+        <p id="demo"></p>
+      
+        <div className="test" id="dropTable" onContextMenu={event}  onDrop={drop} onDragOver={allowDrop} onDragLeave={leave}>
 
           <img src="/image/test.jpg" alt="test" id="ball" onMouseDown={ballOnmousedown}/>
 
         </div> 
+      </div>
     );
 }
