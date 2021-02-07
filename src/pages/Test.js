@@ -36,10 +36,10 @@ function ballOnmousedown(event) {
     
     // let dropTable = document.getElementById("dropTable");
     
-    // передвигаем мяч при событии mousemove
+    // передвигаем рисунок при событии mousemove
     document.addEventListener('mousemove', onMouseMove);
   
-    // отпустить мяч, удалить ненужные обработчики
+    // отпустить рисунок, удалить ненужные обработчики
     ball.onmouseup = function(e) {
       console.log(e.type);
       document.removeEventListener('mousemove', onMouseMove);
