@@ -62,9 +62,8 @@ function dragStart(event) {
 }
 
 
-function allowDrop(event) {
+function allowDrop(event) { // onDragOver
   event.preventDefault();
-
   
   let dropTable = document.getElementById("dropTable");
   if (typeof(window.FileReader) == 'undefined') {
@@ -78,7 +77,8 @@ function allowDrop(event) {
   event.target.style.border = "4px dotted green";
 }
 
-function leave(event) {
+
+function leave(event) { // onDragLeave
   event.preventDefault();
 
   let dropTable = document.getElementById("dropTable");  
@@ -89,27 +89,7 @@ function leave(event) {
 }
 
 
-function uploadProgress(event) {
-  let percent = parseInt(event.loaded / event.total * 100);
-  let demo = document.getElementById("demo");  
-  demo.innerHTML = 'Загрузка: ' + percent + '%';
-}
-
-
-function stateChange(event) {
-  let demo = document.getElementById("demo");  
-  if (event.target.readyState === 4) {
-      if (event.target.status === 200) {
-        demo.innerHTML = 'Загрузка успешно завершена!';
-      } else {
-        demo.innerHTML = 'Произошла ошибка!';
-        demo.color = "red";
-      }
-  }
-}
-
-
-function drop(event) {
+function drop(event) { // onDrop
   event.preventDefault();
 
   let file = event.dataTransfer.files[0];
@@ -125,6 +105,24 @@ function drop(event) {
     let data = event.dataTransfer.getData("Text");
     event.target.appendChild(document.getElementById(data));
     document.getElementById("demo").innerHTML = "Текст был перемещён.";
+  }
+}
+
+function uploadProgress(event) {
+  let percent = parseInt(event.loaded / event.total * 100);
+  let demo = document.getElementById("demo");  
+  demo.innerHTML = 'Загрузка: ' + percent + '%';
+}
+
+function stateChange(event) {
+  let demo = document.getElementById("demo");  
+  if (event.target.readyState === 4) {
+      if (event.target.status === 200) {
+        demo.innerHTML = 'Загрузка успешно завершена!';
+      } else {
+        demo.innerHTML = 'Произошла ошибка!';
+        demo.color = "red";
+      }
   }
 }
 
