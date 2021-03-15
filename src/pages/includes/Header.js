@@ -8,11 +8,11 @@ export default function Header(props) {
             <div className="title">
                 <h1>{props.title}</h1>
             </div>
-
-            <NavLink className="NavLink" to="/">Главная</NavLink>
-            <NavLink className="NavLink" to="/about">О нас</NavLink>
-            <NavLink className="NavLink" to="/test">Тест</NavLink>
-
+            <div className="NavLink_div">
+                <NavLink className="NavLink" to="/">Главная</NavLink>
+                <NavLink className="NavLink" to="/about">О нас</NavLink>
+                <NavLink className="NavLink" to="/test">Тест</NavLink>
+            </div>
         </div>
     );
 }
