@@ -1,1 +1,1 @@
-serve -s build
+node server
