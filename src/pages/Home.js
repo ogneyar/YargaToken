@@ -1,16 +1,6 @@
 import React from 'react';
-import './Home.css';
+import './Home.scss';
 
-
-// function event(e) {
-//     e.preventDefault();
-//     console.log(e.type);
-// }
-
-
-// document.addEventListener("scroll", event)
-// document.addEventListener("drag", event)
-// document.addEventListener("drop", event)
 
 export const Home = () => {
     return (

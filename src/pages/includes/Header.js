@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.css';
+import './Header.scss';
 
 export default function Header(props) {
     return (
@@ -11,7 +11,8 @@ export default function Header(props) {
             <div className="NavLink_div">
                 <NavLink className="NavLink" to="/">Главная</NavLink>
                 <NavLink className="NavLink" to="/about">О нас</NavLink>
-                <NavLink className="NavLink" to="/test">Тест</NavLink>
+                <NavLink className="NavLink" to="/projects">Проекты</NavLink>
+                {/* <NavLink className="NavLink" to="/test">Тест</NavLink> */}
             </div>
         </div>
     );
