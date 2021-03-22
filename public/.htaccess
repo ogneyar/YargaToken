@@ -1,0 +1,5 @@
+DirectoryIndex index.html
+RewriteEngine On
+Redirect 301 /about /
+Redirect 301 /projects /
+Redirect 301 /test /
