@@ -1,5 +1,11 @@
-DirectoryIndex index.html
-RewriteEngine On
-Redirect 301 /about /
-Redirect 301 /projects /
-Redirect 301 /test /
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+
+</IfModule>
