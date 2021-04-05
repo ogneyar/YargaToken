@@ -12,6 +12,7 @@ export default function Header(props) {
                 <NavLink className="NavLink" to="/">Главная</NavLink>
                 <NavLink className="NavLink" to="/about">О нас</NavLink>
                 <NavLink className="NavLink" to="/projects">Проекты</NavLink>
+                <NavLink className="NavLink" to="/consulting">КОНсалтинг</NavLink>
                 {/* <NavLink className="NavLink" to="/test">Тест</NavLink> */}
             </div>
         </div>

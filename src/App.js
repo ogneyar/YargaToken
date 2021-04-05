@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Projects } from './pages/Projects';
+import { Consulting } from './pages/Consulting';
 // eslint-disable-next-line
 import { Test } from './pages/Test';
 import Header from './pages/includes/Header';
@@ -19,6 +20,7 @@ function App() {
             <Route component={ Home } path="/" exact />
             <Route component={ About } path="/about" />
             <Route component={ Projects } path="/projects" />
+            <Route component={ Consulting } path="/consulting" />
             {/* <Route component={ Test } path="/test" /> */}
         </Switch>
       </div>
