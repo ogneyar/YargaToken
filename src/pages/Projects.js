@@ -9,6 +9,9 @@ export const Projects = () => {
                 <br /><br />
                 ☀️У☀️Р☀️Р☀️А☀️</h3>
             </div>
+            <div>
+                <img src="/image/tea.jpg" alt="tea" width="200px" />
+            </div>
         </div>
     )
 }
